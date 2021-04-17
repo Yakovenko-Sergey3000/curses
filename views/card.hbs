@@ -1,0 +1,40 @@
+<h1>Корзина</h1>
+
+<div id="card">
+    {{#if card.courses}} 
+<table class="responsive-table">
+    <thead>
+        <tr>
+              <th>Название курса</th>
+              <th>Количество</th>
+               <th>Действие</th>
+
+          </tr>
+    </thead>
+    <tbody>
+        {{#each card.courses}} 
+        <tr>
+            <td>{{title}}</td>
+            <td>{{count}}x</td>
+            <td>
+                <button class="btn btn-small red darken-1 delete-card" data-id={{id}}>Удалить</button>
+            </td>
+            
+
+        </tr>
+
+        {{/each}}
+        
+    </tbody>
+</table>
+
+<p>Сумма<span class="price">{{card.price}}</span></p>
+
+{{else}} 
+
+<h3>В корзине пусто</h3>
+
+{{/if}} 
+</div>
+
+
